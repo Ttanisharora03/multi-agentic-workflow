@@ -11,14 +11,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Copy pyproject.toml first to leverage Docker cache
 COPY pyproject.toml ./
 
-# Install dependencies
-RUN pip install --no-cache-dir .[db,tools]
-
 # Copy application source code and frontend
 COPY src/ ./src/
 COPY frontend/ ./frontend/
 COPY alembic/ ./alembic/
 COPY alembic.ini ./
+COPY README.md ./
+
+# Install dependencies
+RUN pip install --no-cache-dir .[db,tools]
 
 # Expose port
 EXPOSE 8000
