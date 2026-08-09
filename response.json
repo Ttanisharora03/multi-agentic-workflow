@@ -1,0 +1,159 @@
+{
+  "status": "completed",
+  "plan_id": "1478f09e-afb1-4783-8f0c-ce6123c34f4c",
+  "itinerary": {
+    "destination": "Dubai",
+    "duration_days": 5,
+    "total_estimated_cost_usd": 118.0,
+    "budget_limit_usd": 500.0,
+    "days": [
+      {
+        "day_number": 1,
+        "theme": "City Landmarks",
+        "activities": [
+          {
+            "name": "Visit Burj Khalifa",
+            "duration": "2 hours",
+            "cost": "15 USD",
+            "notes": "Book tickets in advance"
+          },
+          {
+            "name": "Explore Dubai Mall",
+            "duration": "4 hours",
+            "cost": "10 USD",
+            "notes": "Free entry, but food and other activities may incur costs"
+          }
+        ],
+        "transport_info": "Take the metro to Burj Khalifa/Dubai Mall station"
+      },
+      {
+        "day_number": 2,
+        "theme": "Desert Adventure",
+        "activities": [
+          {
+            "name": "Desert Safari",
+            "duration": "6 hours",
+            "cost": "80 USD",
+            "notes": "Includes dune bashing, camel riding, and dinner; vegetarian options available"
+          },
+          {
+            "name": "Dune Bashing",
+            "duration": "1 hour",
+            "cost": "Included in Desert Safari",
+            "notes": "Part of the Desert Safari package"
+          },
+          {
+            "name": "Camel Riding",
+            "duration": "1 hour",
+            "cost": "Included in Desert Safari",
+            "notes": "Part of the Desert Safari package"
+          }
+        ],
+        "transport_info": "Private cars or taxis can be hired for the desert safari"
+      },
+      {
+        "day_number": 3,
+        "theme": "Food and Culture",
+        "activities": [
+          {
+            "name": "Dubai Food Festival",
+            "duration": "4 hours",
+            "cost": "20 USD",
+            "notes": "Samples various local cuisine, including vegetarian options"
+          },
+          {
+            "name": "Global Village",
+            "duration": "4 hours",
+            "cost": "15 USD",
+            "notes": "Cultural and entertainment park with food options"
+          }
+        ],
+        "transport_info": "Take a taxi or ride-hailing service"
+      },
+      {
+        "day_number": 4,
+        "theme": "History and Heritage",
+        "activities": [
+          {
+            "name": "Dubai Museum",
+            "duration": "2 hours",
+            "cost": "3 USD",
+            "notes": "Learn about Dubai's history and culture"
+          },
+          {
+            "name": "Al Fahidi Historical Neighbourhood",
+            "duration": "2 hours",
+            "cost": "0 USD",
+            "notes": "Free entry, self-guided tour"
+          }
+        ],
+        "transport_info": "Take the metro to Al Fahidi station"
+      },
+      {
+        "day_number": 5,
+        "theme": "Relaxation and Shopping",
+        "activities": [
+          {
+            "name": "Beach Relaxation",
+            "duration": "4 hours",
+            "cost": "0 USD",
+            "notes": "Free entry to public beaches"
+          },
+          {
+            "name": "Last-minute Shopping",
+            "duration": "4 hours",
+            "cost": "20 USD",
+            "notes": "For souvenirs and last-minute purchases"
+          }
+        ],
+        "transport_info": "Take a taxi or ride-hailing service"
+      }
+    ],
+    "accommodations": [
+      {
+        "name": "Hotel",
+        "cost_usd": 300.0,
+        "notes": "Book in advance for the best rates"
+      }
+    ],
+    "budget_breakdown": {
+      "total_estimated_usd": 418.0,
+      "budget_limit_usd": 500.0,
+      "remaining_usd": 82.0,
+      "breakdown": [
+        {
+          "category": "Accommodations",
+          "estimated_cost_usd": 300.0,
+          "percentage_of_budget": 60.0
+        },
+        {
+          "category": "Food and Activities",
+          "estimated_cost_usd": 118.0,
+          "percentage_of_budget": 23.6
+        }
+      ],
+      "alerts": [
+        {
+          "severity": "Low",
+          "message": "Budget is within limits, but consider allocating more for unexpected expenses",
+          "suggestion": "Add 10-20% to the budget for contingencies"
+        }
+      ],
+      "is_within_budget": true
+    },
+    "review": {
+      "approved": true,
+      "overall_score": 8.5,
+      "issues": [
+        "No explicit mention of vegetarian diet accommodation",
+        "Some activities have $0.0 cost, which may not be accurate"
+      ],
+      "suggestions": [
+        "Include explicit vegetarian diet options",
+        "Verify and update activity costs for accuracy",
+        "Consider adding more cultural experiences"
+      ],
+      "verdict": "Approved with minor adjustments needed"
+    }
+  }
+}

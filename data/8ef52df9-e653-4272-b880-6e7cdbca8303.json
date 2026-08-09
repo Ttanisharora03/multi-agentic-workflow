@@ -1,0 +1,16 @@
+{
+  "plan_id": "8ef52df9-e653-4272-b880-6e7cdbca8303",
+  "status": "failed",
+  "itinerary": null,
+  "budget_summary": null,
+  "review": null,
+  "errors": [
+    "destination_node error: 1 validation error for DestinationOutput\nrecommendations.5.category\n  Input should be 'landmark', 'food', 'experience' or 'culture' [type=literal_error, input_value='adventure', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/literal_error",
+    "logistics_node error: 'destination_output'",
+    "budget_node error: 'destination_output'",
+    "merge_node error: 'destination_output'",
+    "review_node error: 'draft_itinerary'",
+    "finalize_node error: 'draft_itinerary'"
+  ],
+  "processing_time_seconds": 2.4011054039001465
+}

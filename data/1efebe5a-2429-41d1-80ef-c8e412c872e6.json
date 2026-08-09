@@ -1,0 +1,230 @@
+{
+  "plan_id": "1efebe5a-2429-41d1-80ef-c8e412c872e6",
+  "status": "completed",
+  "itinerary": {
+    "destination": "Dubai",
+    "duration_days": 5,
+    "total_estimated_cost_usd": 2439.05,
+    "budget_limit_usd": 3000.0,
+    "days": [
+      {
+        "day": 1,
+        "theme": "Desert Adventure",
+        "activities": [
+          {
+            "name": "Desert Safari",
+            "time": "Flexible",
+            "category": "experience",
+            "cost_usd": 100.0,
+            "crowd_level": "medium"
+          }
+        ],
+        "transport": [
+          "Taxi"
+        ],
+        "day_cost_usd": 100.0
+      },
+      {
+        "day": 2,
+        "theme": "Downtown Dubai",
+        "activities": [
+          {
+            "name": "Burj Khalifa",
+            "time": "Flexible",
+            "category": "landmark",
+            "cost_usd": 30.0,
+            "crowd_level": "high"
+          },
+          {
+            "name": "Dubai Mall",
+            "time": "Flexible",
+            "category": "experience",
+            "cost_usd": 0.0,
+            "crowd_level": "high"
+          }
+        ],
+        "transport": [
+          "Walking"
+        ],
+        "day_cost_usd": 30.0
+      },
+      {
+        "day": 3,
+        "theme": "Deira Exploration",
+        "activities": [
+          {
+            "name": "Deira Souks",
+            "time": "Flexible",
+            "category": "culture",
+            "cost_usd": 0.0,
+            "crowd_level": "medium"
+          },
+          {
+            "name": "Al Muraqqabat Street Food",
+            "time": "Flexible",
+            "category": "food",
+            "cost_usd": 10.0,
+            "crowd_level": "low"
+          }
+        ],
+        "transport": [
+          "Metro (Green Line)",
+          "Taxi"
+        ],
+        "day_cost_usd": 10.0
+      },
+      {
+        "day": 4,
+        "theme": "Downtown Dubai",
+        "activities": [
+          {
+            "name": "Museum of the Future",
+            "time": "Flexible",
+            "category": "landmark",
+            "cost_usd": 15.0,
+            "crowd_level": "medium"
+          }
+        ],
+        "transport": [
+          "Metro (Red Line)"
+        ],
+        "day_cost_usd": 15.0
+      },
+      {
+        "day": 5,
+        "theme": "Dubai Creek",
+        "activities": [
+          {
+            "name": "Dhow Cruise",
+            "time": "Flexible",
+            "category": "experience",
+            "cost_usd": 50.0,
+            "crowd_level": "low"
+          }
+        ],
+        "transport": [
+          "Taxi",
+          "Abra (Water Taxi)"
+        ],
+        "day_cost_usd": 50.0
+      }
+    ],
+    "accommodations": [
+      {
+        "area": "Downtown Dubai",
+        "hotel_tier": "mid-range",
+        "estimated_nightly_cost_usd": 150.0,
+        "nights": 5,
+        "rationale": "Centrally located with access to main attractions and metro lines."
+      }
+    ],
+    "budget_breakdown": {
+      "total_estimated_usd": 2439.05,
+      "budget_limit_usd": 3000.0,
+      "remaining_usd": 560.95,
+      "breakdown": [
+        {
+          "category": "Stay",
+          "estimated_cost_usd": 750.0,
+          "percentage_of_budget": 24.77
+        },
+        {
+          "category": "Transport",
+          "estimated_cost_usd": 100.0,
+          "percentage_of_budget": 3.31
+        },
+        {
+          "category": "Food",
+          "estimated_cost_usd": 600.0,
+          "percentage_of_budget": 19.87
+        },
+        {
+          "category": "Activities",
+          "estimated_cost_usd": 205.0,
+          "percentage_of_budget": 6.8
+        },
+        {
+          "category": "Miscellaneous",
+          "estimated_cost_usd": 284.05,
+          "percentage_of_budget": 9.4
+        }
+      ],
+      "alerts": [
+        {
+          "severity": "info",
+          "message": "Budget is within limits",
+          "suggestion": "No changes needed"
+        }
+      ],
+      "is_within_budget": true
+    },
+    "review": {
+      "approved": true,
+      "overall_score": 0.9,
+      "issues": [
+        "The draft itinerary does not explicitly include shopping activities, which is one of the user's preferences.",
+        "The food category in the budget breakdown seems to be estimated without specific activities or restaurants mentioned in the itinerary."
+      ],
+      "suggestions": [
+        "Consider adding a shopping day or activity to the itinerary, focusing on malls or traditional souks like the Gold Souk or Global Village.",
+        "Include specific dining experiences or restaurants in the itinerary to better align with the user's food preference and to provide a clearer breakdown of food costs."
+      ],
+      "verdict": "The itinerary generally meets the user's requirements but could be improved with more specific inclusions of shopping and dining experiences."
+    }
+  },
+  "budget_summary": {
+    "total_estimated_usd": 2439.05,
+    "budget_limit_usd": 3000.0,
+    "remaining_usd": 560.95,
+    "breakdown": [
+      {
+        "category": "Stay",
+        "estimated_cost_usd": 750.0,
+        "percentage_of_budget": 24.77
+      },
+      {
+        "category": "Transport",
+        "estimated_cost_usd": 100.0,
+        "percentage_of_budget": 3.31
+      },
+      {
+        "category": "Food",
+        "estimated_cost_usd": 600.0,
+        "percentage_of_budget": 19.87
+      },
+      {
+        "category": "Activities",
+        "estimated_cost_usd": 205.0,
+        "percentage_of_budget": 6.8
+      },
+      {
+        "category": "Miscellaneous",
+        "estimated_cost_usd": 284.05,
+        "percentage_of_budget": 9.4
+      }
+    ],
+    "alerts": [
+      {
+        "severity": "info",
+        "message": "Budget is within limits",
+        "suggestion": "No changes needed"
+      }
+    ],
+    "is_within_budget": true
+  },
+  "review": {
+    "approved": true,
+    "overall_score": 0.9,
+    "issues": [
+      "The draft itinerary does not explicitly include shopping activities, which is one of the user's preferences.",
+      "The food category in the budget breakdown seems to be estimated without specific activities or restaurants mentioned in the itinerary."
+    ],
+    "suggestions": [
+      "Consider adding a shopping day or activity to the itinerary, focusing on malls or traditional souks like the Gold Souk or Global Village.",
+      "Include specific dining experiences or restaurants in the itinerary to better align with the user's food preference and to provide a clearer breakdown of food costs."
+    ],
+    "verdict": "The itinerary generally meets the user's requirements but could be improved with more specific inclusions of shopping and dining experiences."
+  },
+  "errors": [],
+  "processing_time_seconds": 4.75765061378479
+}

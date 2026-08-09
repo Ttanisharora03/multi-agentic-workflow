@@ -1,0 +1,237 @@
+{
+  "plan_id": "49566a3c-7f4e-43e5-8f5b-6f4478853386",
+  "status": "completed",
+  "itinerary": {
+    "destination": "Dubai",
+    "duration_days": 5,
+    "total_estimated_cost_usd": 2431.4,
+    "budget_limit_usd": 3000.0,
+    "days": [
+      {
+        "day": 1,
+        "theme": "Exploring Deira",
+        "activities": [
+          {
+            "name": "Al Muraqqabat Street Food",
+            "time": "Flexible",
+            "category": "food",
+            "cost_usd": 10.0,
+            "crowd_level": "low"
+          }
+        ],
+        "transport": [
+          "walking"
+        ],
+        "day_cost_usd": 10.0
+      },
+      {
+        "day": 2,
+        "theme": "Historical Dubai",
+        "activities": [
+          {
+            "name": "Al Fahidi Historical Neighbourhood",
+            "time": "Flexible",
+            "category": "culture",
+            "cost_usd": 0.0,
+            "crowd_level": "medium"
+          },
+          {
+            "name": "Dubai Museum",
+            "time": "Flexible",
+            "category": "culture",
+            "cost_usd": 5.0,
+            "crowd_level": "low"
+          }
+        ],
+        "transport": [
+          "taxi"
+        ],
+        "day_cost_usd": 5.0
+      },
+      {
+        "day": 3,
+        "theme": "Beach Day",
+        "activities": [
+          {
+            "name": "Jumeirah Beach",
+            "time": "Flexible",
+            "category": "experience",
+            "cost_usd": 0.0,
+            "crowd_level": "medium"
+          }
+        ],
+        "transport": [
+          "taxi"
+        ],
+        "day_cost_usd": 0.0
+      },
+      {
+        "day": 4,
+        "theme": "Free Day",
+        "activities": [
+          {
+            "name": "explore Deira",
+            "time": "Flexible",
+            "category": "experience",
+            "cost_usd": 0.0,
+            "crowd_level": "medium"
+          },
+          {
+            "name": "visit the Gold Souk",
+            "time": "Flexible",
+            "category": "experience",
+            "cost_usd": 0.0,
+            "crowd_level": "medium"
+          }
+        ],
+        "transport": [
+          "walking"
+        ],
+        "day_cost_usd": 0.0
+      },
+      {
+        "day": 5,
+        "theme": "Last Day in Dubai",
+        "activities": [
+          {
+            "name": "last-minute shopping",
+            "time": "Flexible",
+            "category": "experience",
+            "cost_usd": 0.0,
+            "crowd_level": "medium"
+          },
+          {
+            "name": "departure",
+            "time": "Flexible",
+            "category": "experience",
+            "cost_usd": 0.0,
+            "crowd_level": "medium"
+          }
+        ],
+        "transport": [
+          "taxi"
+        ],
+        "day_cost_usd": 0.0
+      }
+    ],
+    "accommodations": [
+      {
+        "area": "Deira",
+        "hotel_tier": "budget",
+        "estimated_nightly_cost_usd": 80.0,
+        "nights": 5,
+        "rationale": "Deira is centrally located and has easy access to other areas of Dubai, making it a convenient base for exploring the city. Budget hotels in this area provide good value for money."
+      }
+    ],
+    "budget_breakdown": {
+      "total_estimated_usd": 2431.4,
+      "budget_limit_usd": 3000.0,
+      "remaining_usd": 568.6,
+      "breakdown": [
+        {
+          "category": "Stay",
+          "estimated_cost_usd": 400.0,
+          "percentage_of_budget": 13.33
+        },
+        {
+          "category": "Transport",
+          "estimated_cost_usd": 100.0,
+          "percentage_of_budget": 3.33
+        },
+        {
+          "category": "Food",
+          "estimated_cost_usd": 1200.0,
+          "percentage_of_budget": 40.0
+        },
+        {
+          "category": "Activities",
+          "estimated_cost_usd": 15.0,
+          "percentage_of_budget": 0.5
+        },
+        {
+          "category": "Miscellaneous",
+          "estimated_cost_usd": 716.4,
+          "percentage_of_budget": 23.88
+        }
+      ],
+      "alerts": [
+        {
+          "severity": "info",
+          "message": "Budget is within limits.",
+          "suggestion": "Consider exploring more activities or upgrading accommodations."
+        }
+      ],
+      "is_within_budget": true
+    },
+    "review": {
+      "approved": true,
+      "overall_score": 0.9,
+      "issues": [
+        "Some activities have a medium crowd level, which may not fully align with the user's preference to avoid crowds.",
+        "The 'experience' category activities are not directly related to the user's preferences for food and culture."
+      ],
+      "suggestions": [
+        "Consider replacing activities with medium crowd levels with alternatives that have low crowd levels.",
+        "Add more activities that are directly related to food and culture to better align with the user's preferences.",
+        "Review the budget breakdown to ensure that the allocated amounts for food, transport, and activities are sufficient and aligned with the user's expectations."
+      ],
+      "verdict": "The itinerary generally meets the user's requirements but could be improved by addressing crowd levels and adding more activities that align with the user's preferences for food and culture."
+    }
+  },
+  "budget_summary": {
+    "total_estimated_usd": 2431.4,
+    "budget_limit_usd": 3000.0,
+    "remaining_usd": 568.6,
+    "breakdown": [
+      {
+        "category": "Stay",
+        "estimated_cost_usd": 400.0,
+        "percentage_of_budget": 13.33
+      },
+      {
+        "category": "Transport",
+        "estimated_cost_usd": 100.0,
+        "percentage_of_budget": 3.33
+      },
+      {
+        "category": "Food",
+        "estimated_cost_usd": 1200.0,
+        "percentage_of_budget": 40.0
+      },
+      {
+        "category": "Activities",
+        "estimated_cost_usd": 15.0,
+        "percentage_of_budget": 0.5
+      },
+      {
+        "category": "Miscellaneous",
+        "estimated_cost_usd": 716.4,
+        "percentage_of_budget": 23.88
+      }
+    ],
+    "alerts": [
+      {
+        "severity": "info",
+        "message": "Budget is within limits.",
+        "suggestion": "Consider exploring more activities or upgrading accommodations."
+      }
+    ],
+    "is_within_budget": true
+  },
+  "review": {
+    "approved": true,
+    "overall_score": 0.9,
+    "issues": [
+      "Some activities have a medium crowd level, which may not fully align with the user's preference to avoid crowds.",
+      "The 'experience' category activities are not directly related to the user's preferences for food and culture."
+    ],
+    "suggestions": [
+      "Consider replacing activities with medium crowd levels with alternatives that have low crowd levels.",
+      "Add more activities that are directly related to food and culture to better align with the user's preferences.",
+      "Review the budget breakdown to ensure that the allocated amounts for food, transport, and activities are sufficient and aligned with the user's expectations."
+    ],
+    "verdict": "The itinerary generally meets the user's requirements but could be improved by addressing crowd levels and adding more activities that align with the user's preferences for food and culture."
+  },
+  "errors": [],
+  "processing_time_seconds": 5.020795822143555
+}

@@ -1,0 +1,238 @@
+{
+  "plan_id": "b57c8ca1-a514-4333-9a46-55fd4faa74a1",
+  "status": "completed",
+  "itinerary": {
+    "destination": "Dubai",
+    "duration_days": 5,
+    "total_estimated_cost_usd": 1931.52,
+    "budget_limit_usd": 3000.0,
+    "days": [
+      {
+        "day": 1,
+        "theme": "Exploring Deira",
+        "activities": [
+          {
+            "name": "Al Muraqqabat Street Food",
+            "time": "Flexible",
+            "category": "food",
+            "cost_usd": 10.0,
+            "crowd_level": "low"
+          }
+        ],
+        "transport": [
+          "walking"
+        ],
+        "day_cost_usd": 10.0
+      },
+      {
+        "day": 2,
+        "theme": "Historical Dubai",
+        "activities": [
+          {
+            "name": "Al Fahidi Historical Neighbourhood",
+            "time": "Flexible",
+            "category": "culture",
+            "cost_usd": 0.0,
+            "crowd_level": "medium"
+          },
+          {
+            "name": "Dubai Museum",
+            "time": "Flexible",
+            "category": "culture",
+            "cost_usd": 5.0,
+            "crowd_level": "medium"
+          }
+        ],
+        "transport": [
+          "taxi",
+          "walking"
+        ],
+        "day_cost_usd": 5.0
+      },
+      {
+        "day": 3,
+        "theme": "Beach Day",
+        "activities": [
+          {
+            "name": "Jumeirah Beach",
+            "time": "Flexible",
+            "category": "experience",
+            "cost_usd": 0.0,
+            "crowd_level": "low"
+          }
+        ],
+        "transport": [
+          "taxi"
+        ],
+        "day_cost_usd": 0.0
+      },
+      {
+        "day": 4,
+        "theme": "Free Day",
+        "activities": [
+          {
+            "name": "explore Deira",
+            "time": "Flexible",
+            "category": "experience",
+            "cost_usd": 0.0,
+            "crowd_level": "medium"
+          },
+          {
+            "name": "shop at local markets",
+            "time": "Flexible",
+            "category": "experience",
+            "cost_usd": 0.0,
+            "crowd_level": "medium"
+          }
+        ],
+        "transport": [
+          "walking"
+        ],
+        "day_cost_usd": 0.0
+      },
+      {
+        "day": 5,
+        "theme": "Last Day in Dubai",
+        "activities": [
+          {
+            "name": "last-minute shopping",
+            "time": "Flexible",
+            "category": "experience",
+            "cost_usd": 0.0,
+            "crowd_level": "medium"
+          },
+          {
+            "name": "departure",
+            "time": "Flexible",
+            "category": "experience",
+            "cost_usd": 0.0,
+            "crowd_level": "medium"
+          }
+        ],
+        "transport": [
+          "taxi"
+        ],
+        "day_cost_usd": 0.0
+      }
+    ],
+    "accommodations": [
+      {
+        "area": "Deira",
+        "hotel_tier": "budget",
+        "estimated_nightly_cost_usd": 75.0,
+        "nights": 5,
+        "rationale": "Deira is a central location with easy access to other areas of Dubai and fits within the budget limit."
+      }
+    ],
+    "budget_breakdown": {
+      "total_estimated_usd": 1931.52,
+      "budget_limit_usd": 3000.0,
+      "remaining_usd": 1068.48,
+      "breakdown": [
+        {
+          "category": "Stay",
+          "estimated_cost_usd": 375.0,
+          "percentage_of_budget": 12.5
+        },
+        {
+          "category": "Transport",
+          "estimated_cost_usd": 100.0,
+          "percentage_of_budget": 3.33
+        },
+        {
+          "category": "Food",
+          "estimated_cost_usd": 800.0,
+          "percentage_of_budget": 26.67
+        },
+        {
+          "category": "Activities",
+          "estimated_cost_usd": 15.0,
+          "percentage_of_budget": 0.5
+        },
+        {
+          "category": "Miscellaneous",
+          "estimated_cost_usd": 641.52,
+          "percentage_of_budget": 21.38
+        }
+      ],
+      "alerts": [
+        {
+          "severity": "info",
+          "message": "Budget is within limits",
+          "suggestion": "No changes needed"
+        }
+      ],
+      "is_within_budget": true
+    },
+    "review": {
+      "approved": true,
+      "overall_score": 0.9,
+      "issues": [
+        "Some days have limited activities, consider adding more experiences to fully utilize the day.",
+        "The 'Free Day' could be more structured with specific cultural or food-related activities to align with user preferences."
+      ],
+      "suggestions": [
+        "Consider adding a desert safari or a visit to the Miracle Garden for a more diverse experience.",
+        "Include more food-related activities, such as a visit to the Dubai Food Festival if it coincides with the travel dates.",
+        "For the 'Free Day', suggest visiting the Textile Souk or taking an Abra ride across the creek for a more culturally immersive experience."
+      ],
+      "verdict": "The itinerary generally meets the user's requirements but could benefit from additional activities to enhance the overall experience."
+    }
+  },
+  "budget_summary": {
+    "total_estimated_usd": 1931.52,
+    "budget_limit_usd": 3000.0,
+    "remaining_usd": 1068.48,
+    "breakdown": [
+      {
+        "category": "Stay",
+        "estimated_cost_usd": 375.0,
+        "percentage_of_budget": 12.5
+      },
+      {
+        "category": "Transport",
+        "estimated_cost_usd": 100.0,
+        "percentage_of_budget": 3.33
+      },
+      {
+        "category": "Food",
+        "estimated_cost_usd": 800.0,
+        "percentage_of_budget": 26.67
+      },
+      {
+        "category": "Activities",
+        "estimated_cost_usd": 15.0,
+        "percentage_of_budget": 0.5
+      },
+      {
+        "category": "Miscellaneous",
+        "estimated_cost_usd": 641.52,
+        "percentage_of_budget": 21.38
+      }
+    ],
+    "alerts": [
+      {
+        "severity": "info",
+        "message": "Budget is within limits",
+        "suggestion": "No changes needed"
+      }
+    ],
+    "is_within_budget": true
+  },
+  "review": {
+    "approved": true,
+    "overall_score": 0.9,
+    "issues": [
+      "Some days have limited activities, consider adding more experiences to fully utilize the day.",
+      "The 'Free Day' could be more structured with specific cultural or food-related activities to align with user preferences."
+    ],
+    "suggestions": [
+      "Consider adding a desert safari or a visit to the Miracle Garden for a more diverse experience.",
+      "Include more food-related activities, such as a visit to the Dubai Food Festival if it coincides with the travel dates.",
+      "For the 'Free Day', suggest visiting the Textile Souk or taking an Abra ride across the creek for a more culturally immersive experience."
+    ],
+    "verdict": "The itinerary generally meets the user's requirements but could benefit from additional activities to enhance the overall experience."
+  },
+  "errors": [],
+  "processing_time_seconds": 4.777965307235718
+}

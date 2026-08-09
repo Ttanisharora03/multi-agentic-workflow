@@ -1,0 +1,17 @@
+{
+  "plan_id": "8b32bcab-3e1b-4c41-a6c7-0804e6d65c7a",
+  "status": "failed",
+  "itinerary": null,
+  "budget_summary": null,
+  "review": null,
+  "errors": [
+    "parse_request error: [Errno 2] No such file or directory: 'C:\\\\Users\\\\tanis\\\\projects\\\\Multi agentic next leap\\\\.cache\\\\groq\\\\llama-3.3-70b-versatile_a9b30961cdbf303fdda836a0e940871e.json'",
+    "destination_node error: 'travel_request'",
+    "logistics_node error: 'travel_request'",
+    "budget_node error: 'travel_request'",
+    "merge_node error: 'travel_request'",
+    "review_node error: 'draft_itinerary'",
+    "finalize_node error: 'draft_itinerary'"
+  ],
+  "processing_time_seconds": 0.4288215637207031
+}

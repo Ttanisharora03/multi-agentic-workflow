@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nextstop - Interest Picker</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#005c55",
+                    "primary-container": "#0f766e",
+                    "surface-container-high": "#eae7e7",
+                    "outline-variant": "#bdc9c6",
+                    "background": "#fcf9f8",
+                    "on-surface": "#1c1b1b",
+                    "on-surface-variant": "#3e4947",
+                    "outline": "#6e7977",
+            },
+            "fontFamily": {
+                    "headline-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .chip-selected {
+            background-color: #0F766E !important;
+            color: #FFFFFF !important;
+            border-color: #0F766E !important;
+            box-shadow: 0 4px 12px rgba(15, 118, 110, 0.2);
+        }
+        body {
+            background-color: #fcf9f8;
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen text-on-surface">
+<header class="w-full top-0 sticky bg-background flex items-center justify-between px-4 h-16 z-50">
+<button class="text-primary hover:opacity-80 transition-opacity active:scale-95 duration-200 flex items-center justify-center" onclick="window.history.back()">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+<div class="w-6 h-2 rounded-full bg-primary transition-all duration-300"></div>
+<div class="w-2 h-2 rounded-full bg-outline-variant"></div>
+</div>
+<div class="w-10"></div>
+</header>
+<main class="flex-grow flex flex-col px-6 md:px-10 py-8 max-w-2xl mx-auto w-full">
+<div class="mb-10 text-center md:text-left">
+<h1 class="font-headline-lg text-[28px] md:text-headline-lg text-on-background mb-4">
+                What excites you in Dubai?
+            </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Select your interests to help us craft your perfect desert adventure.
+            </p>
+</div>
+<div class="grid grid-cols-2 gap-4 mb-10 h-48">
+<div class="rounded-xl overflow-hidden relative group">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDtaA0HDefv907BVxuZGsLWeS9ZTdHCbqWzfg4cuNeYcBIjXOQr0jKygJ-o1y3sHv6BP_9R0-zuB8bM4PNekQYeQXxlEZNDdh8mkSP2D6u9NWH9WcImCNV6r5Sr81PczKlpoCgsIliH85RnUfIv1fO6uHR61Pi_-lO-44QHNBXLXylqXtH_cVFo227CLnff85htdU_q_yg2AbIGxsp6qodDn5RIPDXWjiOWhgca-S-JkqLH0JPhIWQnEg')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+<span class="text-white font-label-md text-label-md">Adventure</span>
+</div>
+</div>
+<div class="grid grid-rows-2 gap-4">
+<div class="rounded-xl overflow-hidden relative group">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAFoTlDO1buCcjNnN_YrFIIM9qv4rAuS_x9Wd28-G4IU-er8NnC1z9PInGGANP299GdM7bHJhF1Nt04ab2F6qhZaHgg9IU7Gg1NpcrLpq4zPT2yejHRKVMQK6Uq1Ou-fGGsu3LTS_hNXYl8cGDDiv7lZDeMQ5_6Q_zHN0YRBTnHBiSOn7eI3_kPqSh0z05lpC0TddVz0U0NZav0Mx_ix2NQSzaM69s7RbmW-itPavYaJmU6AP97DqxhiQ')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+<div class="rounded-xl overflow-hidden relative group">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAUz9L2w8DHZtykJwXuoMn4QV8lXi-8D1F3vHpU6I12yjC58ME4Oti1uj9y8VP2oMbD55jZ0alS3O339wU7KpM4w-p8JTBCbGveYDhOs4Hl5gu2tvuIqHc3S6XnzfPXkRZpayRfrR0_boo1f0iYyNxkW6qu_u53EmJJ_Dkd2Yi-OipbiFSRet-wZn9e_q3ngJ-2uT1Yd5DIGWJ2_JcsDpAKi5HGsNP-1-W-LoDmjefYOUZw3euPzZhiVA')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-3 mb-12">
+<button class="px-6 py-3 rounded-full border border-outline-variant text-on-surface-variant font-label-md text-label-md bg-white hover:bg-surface-container-high transition-all duration-200 active:scale-95 flex items-center gap-2" onclick="toggleChip(this)" data-interest="Desert Safari">
+<span class="material-symbols-outlined text-[18px]">landscape</span> Desert Safari
+</button>
+<button class="px-6 py-3 rounded-full border border-outline-variant text-on-surface-variant font-label-md text-label-md bg-white hover:bg-surface-container-high transition-all duration-200 active:scale-95 flex items-center gap-2" onclick="toggleChip(this)" data-interest="Beaches">
+<span class="material-symbols-outlined text-[18px]">beach_access</span> Beaches
+</button>
+<button class="px-6 py-3 rounded-full border border-outline-variant text-on-surface-variant font-label-md text-label-md bg-white hover:bg-surface-container-high transition-all duration-200 active:scale-95 flex items-center gap-2" onclick="toggleChip(this)" data-interest="Shopping">
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span> Shopping
+</button>
+<button class="px-6 py-3 rounded-full border border-outline-variant text-on-surface-variant font-label-md text-label-md bg-white hover:bg-surface-container-high transition-all duration-200 active:scale-95 flex items-center gap-2" onclick="toggleChip(this)" data-interest="Old Dubai">
+<span class="material-symbols-outlined text-[18px]">castle</span> Old Dubai
+</button>
+<button class="px-6 py-3 rounded-full border border-outline-variant text-on-surface-variant font-label-md text-label-md bg-white hover:bg-surface-container-high transition-all duration-200 active:scale-95 flex items-center gap-2" onclick="toggleChip(this)" data-interest="Nightlife">
+<span class="material-symbols-outlined text-[18px]">nightlife</span> Nightlife
+</button>
+<button class="px-6 py-3 rounded-full border border-outline-variant text-on-surface-variant font-label-md text-label-md bg-white hover:bg-surface-container-high transition-all duration-200 active:scale-95 flex items-center gap-2" onclick="toggleChip(this)" data-interest="Food">
+<span class="material-symbols-outlined text-[18px]">restaurant</span> Food
+</button>
+<button class="px-6 py-3 rounded-full border border-outline-variant text-on-surface-variant font-label-md text-label-md bg-white hover:bg-surface-container-high transition-all duration-200 active:scale-95 flex items-center gap-2" onclick="toggleChip(this)" data-interest="Adventure">
+<span class="material-symbols-outlined text-[18px]">hiking</span> Adventure
+</button>
+<button class="px-6 py-3 rounded-full border border-outline-variant text-on-surface-variant font-label-md text-label-md bg-white hover:bg-surface-container-high transition-all duration-200 active:scale-95 flex items-center gap-2" onclick="toggleChip(this)" data-interest="Architecture">
+<span class="material-symbols-outlined text-[18px]">apartment</span> Architecture
+</button>
+</div>
+
+<div class="mb-8 w-full">
+    <label for="custom-request" class="block font-label-md text-label-md text-on-surface-variant mb-2">Anything else you'd like to tell us?</label>
+    <textarea id="custom-request" rows="3" class="w-full px-4 py-3 rounded-xl border border-outline-variant text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow duration-200 resize-none font-body-md" placeholder="e.g., I want to visit the Burj Khalifa on day 1, need a vegetarian diet..."></textarea>
+</div>
+
+<!-- Loading State Overlay -->
+<div id="loadingOverlay" class="fixed inset-0 bg-background/80 backdrop-blur-sm z-50 hidden flex-col items-center justify-center">
+    <div class="animate-spin rounded-full h-12 w-12 border-4 border-primary border-t-transparent mb-4"></div>
+    <h2 class="font-headline-md text-on-surface mb-2">Generating your journey...</h2>
+    <p class="font-body-md text-on-surface-variant" id="loadingText">Analyzing destinations</p>
+</div>
+</main>
+<footer class="p-4 md:px-10 md:pb-12 bg-background/80 backdrop-blur-md sticky bottom-0 border-t border-outline-variant/10 flex flex-col items-center">
+<button class="w-full max-w-md bg-primary text-white py-4 rounded-xl font-label-md text-label-md transition-all duration-300 hover:shadow-lg active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed" id="continue-btn" onclick="generateItinerary()">
+            Continue
+        </button>
+<p class="mt-4 font-body-sm text-body-sm text-outline text-center">
+            Step 2 of 3 • You can change these later
+        </p>
+</footer>
+<script>
+        function toggleChip(element) {
+            element.classList.toggle('chip-selected');
+            if (element.classList.contains('chip-selected')) {
+                element.querySelector('.material-symbols-outlined').style.fontVariationSettings = "'FILL' 1";
+            } else {
+                element.querySelector('.material-symbols-outlined').style.fontVariationSettings = "'FILL' 0";
+            }
+            updateButtonState();
+        }
+
+        function updateButtonState() {
+            const selectedCount = document.querySelectorAll('.chip-selected').length;
+            const btn = document.getElementById('continue-btn');
+            
+            if (selectedCount > 0) {
+                btn.removeAttribute('disabled');
+                btn.textContent = `Continue with ${selectedCount} interest${selectedCount > 1 ? 's' : ''}`;
+            } else {
+                btn.setAttribute('disabled', 'true');
+                btn.textContent = 'Continue';
+            }
+        }
+        
+        const loadingTexts = ["Analyzing destinations...", "Booking logistics...", "Crunching budget...", "Reviewing itinerary..."];
+        
+        async function generateItinerary() {
+            const selected = Array.from(document.querySelectorAll('.chip-selected')).map(el => el.getAttribute('data-interest'));
+            const interestsString = selected.join(", ");
+            
+            // Show loading
+            document.getElementById('loadingOverlay').classList.remove('hidden');
+            document.getElementById('loadingOverlay').classList.add('flex');
+            
+            let i = 0;
+            const interval = setInterval(() => {
+                i = (i + 1) % loadingTexts.length;
+                document.getElementById('loadingText').textContent = loadingTexts[i];
+            }, 2000);
+            
+            // Build the query
+            const customRequest = document.getElementById('custom-request').value.trim();
+            const customRequestText = customRequest ? ` Additional requirements: ${customRequest}` : '';
+            const query = `Plan a 5 day trip to Dubai. Budget is $3000. I love: ${interestsString}.${customRequestText}`;
+            
+            try {
+                const response = await fetch('/api/v1/plan', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ query: query, traveler_count: 1 })
+                });
+                
+                const data = await response.json();
+                clearInterval(interval);
+                
+                if (response.ok && data.status === "completed") {
+                    // Save to localStorage so itinerary.html can read it
+                    localStorage.setItem('dubaiItinerary', JSON.stringify(data));
+                    window.location.href = 'itinerary.html';
+                } else {
+                    alert("Generation failed! " + (data.errors ? data.errors[0] : "Unknown error"));
+                    document.getElementById('loadingOverlay').classList.add('hidden');
+                    document.getElementById('loadingOverlay').classList.remove('flex');
+                }
+            } catch (err) {
+                clearInterval(interval);
+                alert("Network error: " + err.message);
+                document.getElementById('loadingOverlay').classList.add('hidden');
+                document.getElementById('loadingOverlay').classList.remove('flex');
+            }
+        }
+
+        updateButtonState();
+    </script>
+</body>
+</html>

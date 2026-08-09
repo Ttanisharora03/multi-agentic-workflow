@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Nextstop - Your Journey</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#005c55",
+                        "primary-container": "#0f766e",
+                        "secondary": "#825516",
+                        "secondary-container": "#fec178",
+                        "tertiary": "#005f2d",
+                        "tertiary-container": "#007a3c",
+                        "surface": "#fcf9f8",
+                        "surface-variant": "#e5e2e1",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "on-surface": "#1c1b1b",
+                        "on-surface-variant": "#3e4947",
+                        "outline": "#6e7977",
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        body {
+            background-color: #FAFAF9;
+            -webkit-tap-highlight-color: transparent;
+            min-height: max(884px, 100dvh);
+        }
+        .safe-pb {
+            padding-bottom: env(safe-area-inset-bottom, 20px);
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<header class="w-full sticky top-0 bg-surface shadow-[0px_4px_20px_rgba(0,0,0,0.04)] z-50 flex justify-between items-center px-4 md:px-10 h-16">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-label-md text-label-md text-on-surface" id="header-dest">Dubai</span>
+</div>
+<span class="text-[10px] font-bold text-on-surface-variant/40 tracking-wider">LOCKED ITINERARY</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 bg-secondary-container/10 px-3 py-1.5 rounded-full border border-secondary/5">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="font-label-md text-label-md text-secondary" id="header-budget">$3000</span>
+</div>
+</header>
+<main class="pb-24">
+<section class="relative w-full h-[300px] overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAVMOA24cFB5Ra5Elf6XMD9jlIofvJ8sKBYT3WZ86zx8Ff5jjb1BDVy5DMlAQx3_2PHfT6ZmOGOPeIzJAAwYsYl_DdExvtQsYrMzb5ItNHNGxFIPWdju7szKUgu_rdokFwNXpz2nk8TzwsVCrrx6FqxSmsX6o0n0PlIXheJTr2eLc_N9-qBoa2NMqA9FJUFWEsrxlxyVURIh3nu8hmfpwkA5ikPjNK9cNZNKhwbh-LaOZnKedxQspknzA')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-4 right-4 md:left-10 md:right-10">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-white mb-1">Your Journey</h1>
+<p class="text-white/80 font-body-sm text-body-sm" id="hero-subtitle">5 Days • Total Cost: $0</p>
+</div>
+</section>
+
+<section class="px-4 md:px-10 mt-8">
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] border border-on-surface/5">
+<div class="flex justify-between items-end mb-3">
+<span class="font-label-md text-label-md text-on-surface">Budget Health</span>
+<span class="font-label-md text-label-md text-primary" id="budget-percentage">0%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-variant rounded-full overflow-hidden">
+<div id="budget-bar" class="h-full bg-gradient-to-r from-primary to-tertiary-container w-[0%] transition-all duration-1000 ease-out"></div>
+</div>
+<p class="mt-3 text-on-surface-variant font-body-sm text-body-sm" id="budget-msg">Analyzing your spend...</p>
+</div>
+</section>
+
+<section class="mt-10 px-4 md:px-10">
+<h2 class="font-label-md text-label-md text-on-surface uppercase tracking-widest opacity-60 mb-6">Upcoming Quests</h2>
+<div class="flex flex-col gap-4" id="quest-container">
+    <!-- Dynamic Content injected here -->
+</div>
+</section>
+</main>
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 safe-pb bg-surface border-t border-outline-variant/10 shadow-[0px_-4px_20px_rgba(0,0,0,0.04)]">
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors" onclick="window.location.href='index.html'">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-[11px] mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary font-bold">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-md text-[11px] mt-1">Explore</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">event_note</span>
+<span class="font-label-md text-[11px] mt-1">Itinerary</span>
+</button>
+</nav>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const dataStr = localStorage.getItem('dubaiItinerary');
+        if (!dataStr) {
+            document.getElementById('quest-container').innerHTML = '<p class="text-on-surface-variant">No itinerary found! Go back and plan a trip.</p>';
+            return;
+        }
+        
+        try {
+            const data = JSON.parse(dataStr);
+            const itinerary = data.itinerary;
+            
+            // Header
+            document.getElementById('header-dest').textContent = itinerary.destination;
+            document.getElementById('header-budget').textContent = `$${itinerary.budget_limit_usd}`;
+            document.getElementById('hero-subtitle').textContent = `${itinerary.duration_days} Days • Total Est. Cost: $${itinerary.total_estimated_cost_usd}`;
+            
+            // Budget Bar
+            const percent = Math.min(100, (itinerary.total_estimated_cost_usd / itinerary.budget_limit_usd) * 100);
+            document.getElementById('budget-percentage').textContent = `${percent.toFixed(0)}%`;
+            document.getElementById('budget-bar').style.width = `${percent}%`;
+            document.getElementById('budget-msg').textContent = itinerary.budget_breakdown.alerts[0].message;
+            
+            // Days
+            const container = document.getElementById('quest-container');
+            container.innerHTML = '';
+            
+            itinerary.days.forEach(day => {
+                const activitiesHtml = day.activities.map(act => `
+                    <div class="flex justify-between items-start mt-3">
+                        <div class="flex flex-col">
+                            <span class="text-[13px] font-bold text-on-surface">${act.name}</span>
+                            <span class="text-[11px] text-on-surface-variant">${act.category} • ${act.time}</span>
+                        </div>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-primary/10 text-primary uppercase">$${act.cost_usd}</span>
+                    </div>
+                `).join('');
+                
+                const card = `
+                <div class="flex flex-col gap-2 p-4 bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] border border-on-surface/5">
+                    <div class="flex justify-between items-center pb-2 border-b border-surface-variant">
+                        <h3 class="font-label-md text-label-md text-on-surface">Day ${day.day}: ${day.theme}</h3>
+                        <span class="text-[12px] text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">directions_walk</span> ${day.transport.join(', ')}</span>
+                    </div>
+                    ${activitiesHtml}
+                    <div class="mt-2 pt-2 border-t border-surface-variant flex justify-between">
+                        <span class="text-[11px] text-on-surface-variant font-bold">DAILY TOTAL</span>
+                        <span class="text-[12px] text-on-surface font-bold">$${day.day_cost_usd}</span>
+                    </div>
+                </div>
+                `;
+                container.innerHTML += card;
+            });
+            
+        } catch(err) {
+            console.error("Error parsing itinerary", err);
+        }
+    });
+</script>
+</body>
+</html>

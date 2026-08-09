@@ -1,0 +1,240 @@
+{
+  "plan_id": "2461ee3b-3b09-40e4-bd9b-55cd265ec1d6",
+  "status": "completed",
+  "itinerary": {
+    "destination": "Dubai",
+    "duration_days": 5,
+    "total_estimated_cost_usd": 2439.0,
+    "budget_limit_usd": 3000.0,
+    "days": [
+      {
+        "day": 1,
+        "theme": "Arrival and Downtown Exploration",
+        "activities": [
+          {
+            "name": "Check-in to hotel",
+            "time": "Flexible",
+            "category": "experience",
+            "cost_usd": 0.0,
+            "crowd_level": "medium"
+          },
+          {
+            "name": "Explore Dubai Mall",
+            "time": "Flexible",
+            "category": "experience",
+            "cost_usd": 0.0,
+            "crowd_level": "medium"
+          }
+        ],
+        "transport": [
+          "Taxi"
+        ],
+        "day_cost_usd": 0.0
+      },
+      {
+        "day": 2,
+        "theme": "Desert Adventure",
+        "activities": [
+          {
+            "name": "Desert Safari",
+            "time": "Flexible",
+            "category": "experience",
+            "cost_usd": 100.0,
+            "crowd_level": "medium"
+          }
+        ],
+        "transport": [
+          "Private Car"
+        ],
+        "day_cost_usd": 100.0
+      },
+      {
+        "day": 3,
+        "theme": "Cultural Experience",
+        "activities": [
+          {
+            "name": "Al Muraqqabat Street Food",
+            "time": "Flexible",
+            "category": "food",
+            "cost_usd": 10.0,
+            "crowd_level": "low"
+          },
+          {
+            "name": "Gold Souk",
+            "time": "Flexible",
+            "category": "culture",
+            "cost_usd": 0.0,
+            "crowd_level": "medium"
+          }
+        ],
+        "transport": [
+          "Metro (Green Line)",
+          "Walking"
+        ],
+        "day_cost_usd": 10.0
+      },
+      {
+        "day": 4,
+        "theme": "Fine Dining and Leisure",
+        "activities": [
+          {
+            "name": "DIFC Fine Dining",
+            "time": "Flexible",
+            "category": "food",
+            "cost_usd": 100.0,
+            "crowd_level": "medium"
+          }
+        ],
+        "transport": [
+          "Metro (Red Line)",
+          "Taxi"
+        ],
+        "day_cost_usd": 100.0
+      },
+      {
+        "day": 5,
+        "theme": "Marina and Beach",
+        "activities": [
+          {
+            "name": "Dubai Marina",
+            "time": "Flexible",
+            "category": "experience",
+            "cost_usd": 0.0,
+            "crowd_level": "medium"
+          },
+          {
+            "name": "Jumeirah Beach",
+            "time": "Flexible",
+            "category": "experience",
+            "cost_usd": 0.0,
+            "crowd_level": "medium"
+          }
+        ],
+        "transport": [
+          "Metro (Red Line)",
+          "Tram"
+        ],
+        "day_cost_usd": 0.0
+      }
+    ],
+    "accommodations": [
+      {
+        "area": "Downtown Dubai",
+        "hotel_tier": "mid-range",
+        "estimated_nightly_cost_usd": 150.0,
+        "nights": 5,
+        "rationale": "Centrally located, close to Dubai Mall and other attractions, with easy access to public transport"
+      }
+    ],
+    "budget_breakdown": {
+      "total_estimated_usd": 2439.0,
+      "budget_limit_usd": 3000.0,
+      "remaining_usd": 561.0,
+      "breakdown": [
+        {
+          "category": "Stay",
+          "estimated_cost_usd": 750.0,
+          "percentage_of_budget": 0.25
+        },
+        {
+          "category": "Transport",
+          "estimated_cost_usd": 100.0,
+          "percentage_of_budget": 0.0333
+        },
+        {
+          "category": "Food",
+          "estimated_cost_usd": 700.0,
+          "percentage_of_budget": 0.2333
+        },
+        {
+          "category": "Activities",
+          "estimated_cost_usd": 260.0,
+          "percentage_of_budget": 0.0867
+        },
+        {
+          "category": "Miscellaneous",
+          "estimated_cost_usd": 629.0,
+          "percentage_of_budget": 0.2097
+        }
+      ],
+      "alerts": [
+        {
+          "severity": "info",
+          "message": "You are within your budget limit.",
+          "suggestion": "Consider adding more activities or upgrading your accommodations."
+        }
+      ],
+      "is_within_budget": true
+    },
+    "review": {
+      "approved": true,
+      "overall_score": 0.9,
+      "issues": [
+        "The draft itinerary does not include any shopping activities, despite it being one of the user's preferences.",
+        "Some activities lack specific timings, which could lead to unrealistic daily schedules."
+      ],
+      "suggestions": [
+        "Add a shopping activity, such as visiting the Dubai Mall or the Gold Souk, to cater to the user's preference.",
+        "Provide more specific timings for each activity to ensure a realistic daily schedule.",
+        "Consider allocating the remaining budget to upgrade accommodations or add more activities."
+      ],
+      "verdict": "The draft itinerary meets most of the user's requirements but needs some adjustments to fully satisfy their preferences."
+    }
+  },
+  "budget_summary": {
+    "total_estimated_usd": 2439.0,
+    "budget_limit_usd": 3000.0,
+    "remaining_usd": 561.0,
+    "breakdown": [
+      {
+        "category": "Stay",
+        "estimated_cost_usd": 750.0,
+        "percentage_of_budget": 0.25
+      },
+      {
+        "category": "Transport",
+        "estimated_cost_usd": 100.0,
+        "percentage_of_budget": 0.0333
+      },
+      {
+        "category": "Food",
+        "estimated_cost_usd": 700.0,
+        "percentage_of_budget": 0.2333
+      },
+      {
+        "category": "Activities",
+        "estimated_cost_usd": 260.0,
+        "percentage_of_budget": 0.0867
+      },
+      {
+        "category": "Miscellaneous",
+        "estimated_cost_usd": 629.0,
+        "percentage_of_budget": 0.2097
+      }
+    ],
+    "alerts": [
+      {
+        "severity": "info",
+        "message": "You are within your budget limit.",
+        "suggestion": "Consider adding more activities or upgrading your accommodations."
+      }
+    ],
+    "is_within_budget": true
+  },
+  "review": {
+    "approved": true,
+    "overall_score": 0.9,
+    "issues": [
+      "The draft itinerary does not include any shopping activities, despite it being one of the user's preferences.",
+      "Some activities lack specific timings, which could lead to unrealistic daily schedules."
+    ],
+    "suggestions": [
+      "Add a shopping activity, such as visiting the Dubai Mall or the Gold Souk, to cater to the user's preference.",
+      "Provide more specific timings for each activity to ensure a realistic daily schedule.",
+      "Consider allocating the remaining budget to upgrade accommodations or add more activities."
+    ],
+    "verdict": "The draft itinerary meets most of the user's requirements but needs some adjustments to fully satisfy their preferences."
+  },
+  "errors": [],
+  "processing_time_seconds": 4.805675029754639
+}
