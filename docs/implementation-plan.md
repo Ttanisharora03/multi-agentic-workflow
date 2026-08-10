@@ -543,21 +543,43 @@ class PlanResponse(BaseModel):
 
 ---
 
-## Phase 6 — Containerization & Deployment
+## Phase 6 — Speech-to-Text Integration
+
+> **Goal:** Allow users to submit travel requests via audio (voice notes).
+
+---
+
+### Step 6A · Groq Whisper API Integration
+
+#### Files: src/api/routes.py, src/tools/audio.py
+
+| #   | Task | Details |
+|-----|------|---------|
+| 6A.1 | Create Audio Utility | src/tools/audio.py — transcribe_audio(file_path: str) -> str using Groq Whisper model |
+| 6A.2 | New API Endpoint | POST /api/v1/plan/audio — Accepts UploadFile, transcribes, and runs pipeline |
+| 6A.3 | Error Handling | Handle invalid formats and file sizes |
+
+#### Exit Criteria
+- [ ] Endpoint accepts audio and returns itinerary.
+- [ ] Transcribed text is logged.
+
+---
+
+## Phase 7 — Containerization & Deployment
 
 > **Goal:** Package the application for local development and production deployment.
 
 ---
 
-### Step 6A · Docker & Docker Compose
+### Step 7A · Docker & Docker Compose
 
 | #   | Task | File | Details |
 |-----|------|------|---------|
-| 6A.1 | Create Dockerfile | `Dockerfile` | Multi-stage build: Python 3.12 slim, install deps, copy source, run uvicorn |
-| 6A.2 | Create Docker Compose | `docker-compose.yml` | 3 services: `app` (FastAPI), `postgres` (PostgreSQL 16), `redis` (Redis 7) |
-| 6A.3 | Health checks | `docker-compose.yml` | Health check endpoints for all 3 services |
-| 6A.4 | Volume mounts | `docker-compose.yml` | Source code mount for hot-reload in dev, named volume for PostgreSQL data |
-| 6A.5 | Environment file | `docker-compose.yml` | Load from `.env` |
+| 7A.1 | Create Dockerfile | `Dockerfile` | Multi-stage build: Python 3.12 slim, install deps, copy source, run uvicorn |
+| 7A.2 | Create Docker Compose | `docker-compose.yml` | 3 services: `app` (FastAPI), `postgres` (PostgreSQL 16), `redis` (Redis 7) |
+| 7A.3 | Health checks | `docker-compose.yml` | Health check endpoints for all 3 services |
+| 7A.4 | Volume mounts | `docker-compose.yml` | Source code mount for hot-reload in dev, named volume for PostgreSQL data |
+| 7A.5 | Environment file | `docker-compose.yml` | Load from `.env` |
 
 #### Docker Compose Architecture
 
@@ -578,29 +600,29 @@ flowchart TB
 
 ---
 
-### Step 6B · CI/CD Pipeline
+### Step 7B · CI/CD Pipeline
 
 #### File: `.github/workflows/ci.yml`
 
 | #   | Task | Details |
 |-----|------|---------|
-| 6B.1 | Lint job | Run `ruff check src/ tests/` |
-| 6B.2 | Type check job | Run `mypy src/` |
-| 6B.3 | Unit test job | Run `pytest tests/ -v --tb=short` (mock LLM calls) |
-| 6B.4 | Build job | Build Docker image, verify it starts |
-| 6B.5 | Trigger rules | Run on push to `main` and on all PRs |
+| 7B.1 | Lint job | Run `ruff check src/ tests/` |
+| 7B.2 | Type check job | Run `mypy src/` |
+| 7B.3 | Unit test job | Run `pytest tests/ -v --tb=short` (mock LLM calls) |
+| 7B.4 | Build job | Build Docker image, verify it starts |
+| 7B.5 | Trigger rules | Run on push to `main` and on all PRs |
 
 ---
 
-### Step 6C · Production Deployment
+### Step 7C · Production Deployment
 
 | #   | Task | Details |
 |-----|------|---------|
-| 6C.1 | Choose platform | Railway or Google Cloud Run |
-| 6C.2 | Provision managed PostgreSQL | Railway Postgres or Cloud SQL |
-| 6C.3 | Provision managed Redis | Railway Redis or Memorystore |
-| 6C.4 | Set environment variables | All API keys, DB URL, Redis URL in platform secrets |
-| 6C.5 | Deploy & smoke test | Verify `POST /api/v1/plan` works end-to-end in production |
+| 7C.1 | Choose platform | Railway or Google Cloud Run |
+| 7C.2 | Provision managed PostgreSQL | Railway Postgres or Cloud SQL |
+| 7C.3 | Provision managed Redis | Railway Redis or Memorystore |
+| 7C.4 | Set environment variables | All API keys, DB URL, Redis URL in platform secrets |
+| 7C.5 | Deploy & smoke test | Verify `POST /api/v1/plan` works end-to-end in production |
 
 #### Exit Criteria
 - [ ] `docker compose up` starts all 3 services successfully
@@ -653,9 +675,9 @@ Complete mapping of every file to its creation phase.
 | 5B | `src/db/models.py` | SQLAlchemy ORM models |
 | 5B | `src/db/session.py` | Session management |
 | 5D | `src/tools/search.py` | Web search integration |
-| 6A | `Dockerfile` | Container image |
-| 6A | `docker-compose.yml` | Local dev stack |
-| 6B | `.github/workflows/ci.yml` | CI/CD pipeline |
+| 7A | `Dockerfile` | Container image |
+| 7A | `docker-compose.yml` | Local dev stack |
+| 7B | `.github/workflows/ci.yml` | CI/CD pipeline |
 
 ---
 

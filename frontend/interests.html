@@ -129,8 +129,20 @@
 </div>
 
 <div class="mb-8 w-full">
+    <label for="budget-input" class="block font-label-md text-label-md text-on-surface-variant mb-2">What is your budget (in USD)?</label>
+    <div class="relative mb-6">
+        <span class="absolute left-4 top-3 text-on-surface-variant font-body-md">$</span>
+        <input type="number" id="budget-input" class="w-full pl-8 pr-4 py-3 rounded-xl border border-outline-variant text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow duration-200 font-body-md" placeholder="3000" value="3000" />
+    </div>
+
     <label for="custom-request" class="block font-label-md text-label-md text-on-surface-variant mb-2">Anything else you'd like to tell us?</label>
-    <textarea id="custom-request" rows="3" class="w-full px-4 py-3 rounded-xl border border-outline-variant text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow duration-200 resize-none font-body-md" placeholder="e.g., I want to visit the Burj Khalifa on day 1, need a vegetarian diet..."></textarea>
+    <div class="relative">
+        <textarea id="custom-request" rows="3" class="w-full px-4 py-3 pb-12 rounded-xl border border-outline-variant text-on-surface bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-shadow duration-200 resize-none font-body-md" placeholder="e.g., I want to visit the Burj Khalifa on day 1, need a vegetarian diet..."></textarea>
+        
+        <button id="record-btn" onclick="toggleRecording()" class="absolute bottom-3 right-3 p-2 rounded-full bg-surface-container-high text-primary hover:bg-primary/20 transition-all duration-300 flex items-center justify-center" title="Record Voice Note">
+            <span class="material-symbols-outlined" id="record-icon">mic</span>
+        </button>
+    </div>
 </div>
 
 <!-- Loading State Overlay -->
@@ -172,6 +184,93 @@
             }
         }
         
+        let mediaRecorder;
+        let audioChunks = [];
+        let isRecording = false;
+
+        async function toggleRecording() {
+            const btn = document.getElementById('record-btn');
+            const icon = document.getElementById('record-icon');
+            
+            if (isRecording) {
+                // Stop recording
+                mediaRecorder.stop();
+                isRecording = false;
+                icon.textContent = "mic";
+                btn.classList.remove('bg-red-500', 'text-white', 'animate-pulse');
+                btn.classList.add('bg-surface-container-high', 'text-primary');
+                return;
+            }
+
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                mediaRecorder = new MediaRecorder(stream);
+                audioChunks = [];
+
+                mediaRecorder.addEventListener("dataavailable", event => {
+                    audioChunks.push(event.data);
+                });
+
+                mediaRecorder.addEventListener("stop", async () => {
+                    // Stop all tracks to release microphone
+                    stream.getTracks().forEach(track => track.stop());
+                    
+                    const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+                    await processAudio(audioBlob);
+                });
+
+                mediaRecorder.start();
+                isRecording = true;
+                icon.textContent = "stop";
+                btn.classList.remove('bg-surface-container-high', 'text-primary');
+                btn.classList.add('bg-red-500', 'text-white', 'animate-pulse');
+            } catch (err) {
+                alert("Microphone access denied or unavailable.");
+                console.error(err);
+            }
+        }
+        
+        async function processAudio(audioBlob) {
+            // Show loading overlay for audio processing
+            document.getElementById('loadingOverlay').classList.remove('hidden');
+            document.getElementById('loadingOverlay').classList.add('flex');
+            document.getElementById('loadingText').textContent = "Listening to your request...";
+            
+            let i = 0;
+            const interval = setInterval(() => {
+                i = (i + 1) % loadingTexts.length;
+                document.getElementById('loadingText').textContent = loadingTexts[i];
+            }, 2000);
+            
+            const formData = new FormData();
+            // Create a fake file from the blob for the server
+            formData.append("file", audioBlob, "voice_note.webm");
+            
+            try {
+                const response = await fetch('/api/v1/plan/audio', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                clearInterval(interval);
+                
+                if (response.ok && data.status === "completed") {
+                    localStorage.setItem('dubaiItinerary', JSON.stringify(data));
+                    window.location.href = 'itinerary.html';
+                } else {
+                    alert("Audio generation failed! " + (data.errors ? data.errors[0] : "Unknown error"));
+                    document.getElementById('loadingOverlay').classList.add('hidden');
+                    document.getElementById('loadingOverlay').classList.remove('flex');
+                }
+            } catch (err) {
+                clearInterval(interval);
+                alert("Network error: " + err.message);
+                document.getElementById('loadingOverlay').classList.add('hidden');
+                document.getElementById('loadingOverlay').classList.remove('flex');
+            }
+        }
+        
         const loadingTexts = ["Analyzing destinations...", "Booking logistics...", "Crunching budget...", "Reviewing itinerary..."];
         
         async function generateItinerary() {
@@ -190,8 +289,9 @@
             
             // Build the query
             const customRequest = document.getElementById('custom-request').value.trim();
+            const budget = document.getElementById('budget-input').value || 3000;
             const customRequestText = customRequest ? ` Additional requirements: ${customRequest}` : '';
-            const query = `Plan a 5 day trip to Dubai. Budget is $3000. I love: ${interestsString}.${customRequestText}`;
+            const query = `Plan a 5 day trip to Dubai. Budget is $${budget}. I love: ${interestsString}.${customRequestText}`;
             
             try {
                 const response = await fetch('/api/v1/plan', {

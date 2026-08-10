@@ -4,7 +4,7 @@ from .utils import call_llm
 # pyright: ignore [reportMissingImports]
 from src.tools.search import search_dubai_info
 
-def research_destinations(request: TravelRequest) -> DestinationOutput:
+def research_destinations(request: TravelRequest, fresh: bool = False, plan_id: str = "unknown") -> DestinationOutput:
     prompt = "You are a destination research agent."
     search_query = f"{', '.join(request.preferences)} in {request.destination}"
     live_info = search_dubai_info(search_query)
@@ -20,5 +20,8 @@ def research_destinations(request: TravelRequest) -> DestinationOutput:
         prompt=prompt,
         user_input=user_input,
         response_model=DestinationOutput,
-        model="groq/llama-3.3-70b-versatile"
+        model="groq/llama-3.3-70b-versatile",
+        agent_name="destination",
+        fresh=fresh,
+        plan_id=plan_id
     )

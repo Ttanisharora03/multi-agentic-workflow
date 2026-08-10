@@ -1,0 +1,78 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    services:
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: user
+          POSTGRES_PASSWORD: pass
+          POSTGRES_DB: travel_planner
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+        cache: 'pip'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -e ".[dev,db,tools]"
+        
+    - name: Lint with Ruff
+      run: |
+        ruff check src/ tests/
+        
+    - name: Type check with mypy
+      run: |
+        mypy src/ --ignore-missing-imports
+        
+    - name: Run tests with Pytest
+      env:
+        DATABASE_URL: "postgresql+asyncpg://user:pass@localhost:5432/travel_planner"
+        REDIS_URL: "redis://localhost:6379/0"
+        GROQ_API_KEY: "dummy_key"
+        GEMINI_API_KEY: "dummy_key"
+      run: |
+        pytest tests/ -v --tb=short
+
+  docker-build:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Build Docker image
+      run: docker build -t nextstop-backend:latest .

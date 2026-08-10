@@ -93,3 +93,59 @@ def test_timeout_handling(mocker):
     response = client.post("/api/v1/plan", json={"query": "Plan a trip"})
     assert response.status_code == 504
     assert "Request timed out" in response.json()["detail"]
+
+def test_plan_audio_transcription(mocker):
+    # Mock graph
+    mock_graph = mocker.MagicMock()
+    mock_result = {
+        "final_itinerary": {
+            "destination": "Dubai",
+            "duration_days": 3,
+            "total_estimated_cost_usd": 1500.0,
+            "budget_limit_usd": 2000.0,
+            "days": [],
+            "accommodations": [],
+            "budget_breakdown": {
+                "total_estimated_usd": 1500.0,
+                "budget_limit_usd": 2000.0,
+                "remaining_usd": 500.0,
+                "breakdown": [],
+                "alerts": [],
+                "is_within_budget": True
+            },
+            "review": {
+                "approved": True,
+                "overall_score": 1.0,
+                "issues": [],
+                "suggestions": [],
+                "verdict": "Perfect"
+            }
+        },
+        "review_result": ReviewResult(
+                approved=True,
+                overall_score=1.0,
+                issues=[],
+                suggestions=[],
+                verdict="Perfect"
+            ),
+        "errors": []
+    }
+    mock_graph.invoke.return_value = mock_result
+    # pyrefly: ignore [missing-import]
+    from src.api.routes import get_graph_dependency
+    app.dependency_overrides[get_graph_dependency] = lambda: mock_graph
+    
+    # Mock audio transcribe
+    mocker.patch("src.api.routes.transcribe_audio", return_value="Plan a fun trip to Dubai")
+    
+    # Create fake audio file
+    file_content = b"fake audio content"
+    files = {"file": ("test.mp3", file_content, "audio/mpeg")}
+    
+    response = client.post("/api/v1/plan/audio", files=files)
+    
+    assert response.status_code == 200
+    data = response.json()
+    assert data["status"] == "completed"
+    assert "plan_id" in data
+    assert data["itinerary"]["destination"] == "Dubai"

@@ -14,6 +14,8 @@ src/api/__init__.py
 src/api/dependencies.py
 src/api/routes.py
 src/db/__init__.py
+src/db/models.py
+src/db/session.py
 src/dubai_travel_planner.egg-info/PKG-INFO
 src/dubai_travel_planner.egg-info/SOURCES.txt
 src/dubai_travel_planner.egg-info/dependency_links.txt

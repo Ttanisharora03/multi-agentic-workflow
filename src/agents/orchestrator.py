@@ -15,10 +15,10 @@ class DraftItinerary(BaseModel):
     duration_days: int
     days: List[DayDraft]
 
-def parse_request(raw_input: str) -> TravelRequest:
+def parse_request(raw_input: str, fresh: bool = False, plan_id: str = "unknown") -> TravelRequest:
     prompt = "You are an orchestrator agent. Extract travel request details."
     user_input = f"Extract travel request details from this input:\n{raw_input}"
-    return call_llm(prompt=prompt, user_input=user_input, response_model=TravelRequest)
+    return call_llm(prompt=prompt, user_input=user_input, response_model=TravelRequest, agent_name="orchestrator_parse", fresh=fresh, plan_id=plan_id)
 
 def merge_draft(
     request: TravelRequest, 
@@ -39,11 +39,11 @@ def merge_draft(
         days.append(DayDraft(activities=activities))
     return DraftItinerary(duration_days=request.duration_days, days=days)
 
-def finalize_plan(draft: DraftItinerary, review_result: ReviewResult) -> ItineraryDetail:
+def finalize_plan(draft: DraftItinerary, review_result: ReviewResult, fresh: bool = False, plan_id: str = "unknown") -> ItineraryDetail:
     prompt = "You are an orchestrator agent. Finalize the itinerary."
     user_input = (
         "Finalize the itinerary by applying review suggestions:\n"
         f"Draft: {draft.model_dump_json()}\n"
         f"Review: {review_result.model_dump_json()}\n"
     )
-    return call_llm(prompt=prompt, user_input=user_input, response_model=ItineraryDetail)
+    return call_llm(prompt=prompt, user_input=user_input, response_model=ItineraryDetail, agent_name="orchestrator_finalize", fresh=fresh, plan_id=plan_id)

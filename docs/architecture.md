@@ -584,6 +584,7 @@ flowchart LR
 - [ ] Web search tool integration (SerpAPI / Tavily)
 - [ ] Redis caching for LLM responses
 - [ ] PostgreSQL for plan persistence
+- [ ] Speech-to-Text API (Groq Whisper)
 - [ ] Streaming response support (SSE)
 - [ ] LangSmith tracing integration
 - [ ] Expanded test coverage

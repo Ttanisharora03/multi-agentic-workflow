@@ -13,3 +13,5 @@ class PlannerState(TypedDict, total=False):
     final_itinerary: Optional[Dict[str, Any]]
     errors: List[str]
     retry_count: int
+    fresh: bool
+    plan_id: str
