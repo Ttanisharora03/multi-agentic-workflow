@@ -66,8 +66,6 @@ jobs:
       run: |
         pytest tests/ -v --tb=short
 
-  ability_name: pr-understanding
-
   docker-build:
     needs: build-and-test
     runs-on: ubuntu-latest
